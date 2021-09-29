@@ -6,6 +6,8 @@
   "author": "takuya ishigaki <tky.isgk@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "check-format": "circleci config validate",
+    "check-docker": "circleci local execute",
     "test": "jest"
   },
   "devDependencies": {
