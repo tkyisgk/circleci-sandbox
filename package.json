@@ -1,0 +1,14 @@
+{
+  "name": "circleci-sandbox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tkyisgk/circleci-sandbox.git",
+  "author": "takuya ishigaki <tky.isgk@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.2.3"
+  }
+}

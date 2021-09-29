@@ -1,0 +1,22 @@
+version: 2.1
+commands:
+  run-npm-test:
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - dependencies-test-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - modules-cache-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-test-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+      - run: yarn test
+jobs:
+  node-v12:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - run-npm-test
