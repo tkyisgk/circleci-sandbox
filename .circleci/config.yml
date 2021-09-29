@@ -20,3 +20,8 @@ jobs:
       - image: circleci/node:12
     steps:
       - run-npm-test
+workflows:
+  version: 2
+  test_workflow:
+    jobs:
+      - node-v12
