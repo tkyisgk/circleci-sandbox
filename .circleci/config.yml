@@ -21,7 +21,8 @@ commands:
             ${SLACK_NOTICE_HOOK}
 
 jobs:
-  node-v12:
+  # MEMO: jobが一つの場合は、job名は「build」でなければならない
+  build:
     docker:
       - image: circleci/node:12
     steps:
@@ -31,4 +32,4 @@ workflows:
   version: 2
   test_workflow:
     jobs:
-      - node-v12
+      - build
